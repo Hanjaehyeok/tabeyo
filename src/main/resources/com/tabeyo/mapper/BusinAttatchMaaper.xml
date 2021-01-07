@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tabeyo.mapper.BoardAttachMapper">
+
+	<!-- 삭제 -->
+  <delete id="delete">
+  </delete>
+  
+  <!-- 대표사진 수정 -->
+<update id = "update">
+
+</update>
+  
+  <!-- 첨부 파일 추가 T/F를 통해 사업자등록사진과 대표사진으로나눈다-->
+  <insert id="insert">
+	INSERT INTO tbl_attach(uuid, uploadPath, fileName, filetype, bno)
+	VALUES( #{uuid}, #{uploadPath}, #{fileName}, #{fileType}, #{bno})
+  </insert>
+  
+  <!-- 점포대표사진 조회  -->
+  <select id="findByBno" resultType="com.tabeyo.domain.BoardAttachVO">
+  	SELECT * FROM tbl_attach WHERE bno = #{bno}
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

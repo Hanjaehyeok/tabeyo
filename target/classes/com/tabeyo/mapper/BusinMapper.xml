@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  
+  
+<mapper namespace="com.tabeyo.mapper.BusinMapper">
+
+	 <!-- 사업자리스트 조회 -->
+  <select id="getList" resultType="com.tabeyo.domain.BusinVO">
+   <![CDATA[
+    SELECT * FROM tbl_busin WHERE businNo > 0
+  ]]>
+  </select>
+
+
+  <!-- 쿼리 보관 // 카테고리 지역명 및 검색어를 통하여 점포검색-->
+  <sql id="criteria">
+   	<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+ 		<foreach collection="typeArr" item='type'>
+ 			<trim prefix="OR">
+ 				<choose>
+ 					<when test="type == 'T'.toString()">
+ 						title 	LIKE '%'||#{keyword}||'%'
+ 					</when>
+ 					<when test="type == 'C'.toString()">
+ 						content	LIKE '%'||#{keyword}||'%'
+ 					</when>
+ 					<when test="type == 'W'.toString()">
+ 						writer 	LIKE '%'||#{keyword}||'%'
+ 					</when>
+ 				</choose>
+ 			</trim>
+ 		</foreach>
+  	</trim>
+  </sql>
+  
+  <!-- 점포페이지 접속시 점포 정보 조회 --> 
+  <select id="read" resultType="com.tabeyo.domain.BusinVO">
+  	SELECT * FROM tbl_busin WHERE businNo = #{businNo}
+  </select>
+<!-- 점포 정보 삭제 -->
+  <delete id="delete">
+  </delete>
+  <!-- 사업자 정보 수정 -->
+<update id="update">
+    UPDATE tbl_busin
+    SET    businNm = #{businNm}, businTel = #{businTel},
+           businFood = #{businFood}, businAddr = #{businAddr},
+           businAddr2 = #{businAddr2}, businAddr3 = #{businAddr3},
+           businClosedDay = #{businClosedDay}, businOpen = #{businOpen},
+           businClosed = #{businClosed}, businScale = #{businScale}, 
+           businPark = #{businPark}, businEtc = #{businEtc}
+    WHERE  businNo = #{businNo}
+  </update>
+  
+  
+  
+  <!-- 사업자정보 등록-->
+  <insert id="insertSelectKey">
+  
+  	
+	INSERT INTO tbl_busin(businNo,userid,businnm, lisenceno, busintel,
+						  businfood, businaddr, businaddr2, businaddr3,  
+						  businclosedday, businopen, businclosed,
+						   businscale, businpark, businetc, regdate )
+	VALUES( seq_busin.NEXTVAL, '아무개', #{businNm}, #{lisenceNo},
+		   #{businTel}, #{businFood},  #{businAddr}, #{businAddr2},
+		    #{businAddr3},  #{businClosedDay}, #{businOpen},  
+		    #{businClosed},  #{businScale}, #{businPark}, #{businEtc}
+		    , sysdate)
+  </insert>
+ 
+ 	<!-- 삭제 -->
+ <!--  <delete id="delete">
+  </delete> -->
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

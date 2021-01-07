@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tabeyo.mapper.MenuMapper">
+   <!-- 메뉴 조회 -->
+  <select id="getList" resultType="com.tabeyo.domain.MenuVO">
+   	<![CDATA[	  
+	  SELECT  menuNo, businNo, menuNm, menuPrice
+	              FROM    tbl_menu
+	              WHERE   businNo = #{businNo}
+	              AND	  menuNo > 0
+	 ]]>
+  </select>
+  
+  <!-- 메뉴 수정 -->
+  <update id="update">
+  	UPDATE tbl_menu 
+  	set	menuNm = #{menuNm}, menuPrice = #{menuPrice} 
+  	where menuNo = #{menuNo}
+  </update>
+  
+  <!-- 메뉴삭제 하나 삭제 -->
+  <delete id="delete">
+  	delete from tbl_menu where menuNo = #{menuNo}
+  </delete>
+  
+  <!-- 메뉴 추가 -->
+ <insert id="insertSelectKey">
+	INSERT INTO tbl_menu(menuNo, businNo, menuNm, menuPrice)
+	VALUES(SEQ_TBL_MENU_MENU_NO.NEXTVAL, #{businNo}, #{menuNm}, #{menuPrice})
+  </insert>
+   <!-- 게시물 하나 조회  -->
+  <select id="read" resultType="com.tabeyo.domain.MenuVO">
+  	SELECT * FROM tbl_menu WHERE menuNo = #{menuNo}
+  </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+

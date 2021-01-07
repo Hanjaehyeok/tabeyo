@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tabeyo.mapper.BoardAttachMapper">
+ 
+ 
+  
+  <!-- 메뉴 삭제 할 시 사진 삭제 -->
+  <delete id="delete">
+  	<!-- DELETE FROM tbl_attach WHERE uuid = #{uuid} -->
+  </delete>
+  
+  <!-- 메뉴 추가시 메뉴 사진 추가 -->
+  <insert id="insert">
+  </insert>
+  
+  <!-- 메뉴 사진 조회  -->
+  <select id="findByBusinNo" resultType="com.tabeyo.domain.MenuAttachVO">
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
