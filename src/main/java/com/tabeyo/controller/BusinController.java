@@ -74,6 +74,13 @@ public class BusinController{
 		model.addAttribute("busin", businService.get(businNo));
 	}
 	
+	@GetMapping("/couponList")		//
+	public void couponList(@RequestParam("businNo") Long businNo, 
+				    Model model) {
+		log.info("BusinController...get()");
+		model.addAttribute("busin", businService.get(businNo));
+	}
+	
 	
 	
 	

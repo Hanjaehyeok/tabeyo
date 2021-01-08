@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tabeyo.domain.MenuVO;
-import com.tabeyo.mapper.BusinMapper;
 import com.tabeyo.mapper.MenuMapper;
 
 import lombok.Setter;
@@ -16,9 +15,7 @@ import lombok.extern.log4j.Log4j;
 public class MenuServiceImpl implements MenuService {
 	@Setter(onMethod_ = @Autowired)
 	private MenuMapper menuMapper;
-	
-	@Setter(onMethod_ = @Autowired)
-	private BusinMapper businMapper;
+
 
 
 	@Override

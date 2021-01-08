@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/tabeyo/service/CouponService.java=UTF-8
 encoding//src/main/java/com/tabeyo/service/MenuService.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/busin/menuList.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/include/businHeader.jsp=UTF-8

@@ -6,6 +6,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
       
 
+
 <style>
     	.chat{
           	padding-left: 0px;
@@ -32,7 +33,7 @@
 			  .body-btm{
 				height: 500px;
 				display:flex;
-				width: 30%;
+				width: 29%;
 			  }
 			  .calender{
 			
@@ -42,13 +43,9 @@
 			justify-content: center;
 		
 			  }
-			  .map{
-				
-				overflow: hidden;
-     	       display: flex;
-       	   	  align-items: center;
-   	      	   justify-content: center;
-              }
+			 #map{
+			 margin: auto;
+			 }
        
 
 
@@ -80,9 +77,17 @@
 				<img src="https://miro.medium.com/max/750/1*E2DUofMeDF2xmbfSb_pzkA.gif
 				" >
 				</div>
-				<div class="map">
-					<img src="https://th.bing.com/th/id/OIP.3_BOfw1mnhkdxrnbMzs1NwHaGA?w=251&h=204&c=7&o=5&dpr=1.25&pid=1.7">
-				</div>
+				<div id="map" style="width:95%;height:200px;"></div>
+				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=522889fb7597ea750b4b4f2f434e2773"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
 			</div>
             </div>
            	<button type='button' id="modal">메뉴등록</button>
