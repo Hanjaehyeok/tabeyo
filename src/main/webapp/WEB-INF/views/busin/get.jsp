@@ -59,16 +59,48 @@
 				" >
 				</div>
 			<div id="map" style="width:95%;height:200px;"></div>
-				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=522889fb7597ea750b4b4f2f434e2773"></script>
-			<script>
-		var container = document.getElementById('map');
-		var options = {
-			center: new kakao.maps.LatLng(33.450701, 126.570667),
-			level: 3
-		};
+			<input class="form-control" id="Addr" type="hidden" value="${busin.businAddr } ${busin.businAddr2 } ${busin.businAddr3}">
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	522889fb7597ea750b4b4f2f434e2773&libraries=services"></script>
+<script>
+var Addr = $('#Addr').val();
+console.log(Addr);
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
 
-		var map = new kakao.maps.Map(container, options);
-	</script>
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch(Addr , function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">${busin.businNm }</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+</script>
 			</div>
 			</div>
 		</div>
@@ -115,7 +147,7 @@
 					  <tr class="table-active">
 						<th scope="row">점포주소</th>
 						<td><input class="form-control" name="businAddr"
-					       value="${busin.businAddr }" readonly></td>
+					       value="${busin.businAddr} ${busin.businAddr2} ${busin.businAddr3}" readonly></td>
 					  </tr>
 					  <tr class="table-active">
 						<th scope="row">휴무일</th>

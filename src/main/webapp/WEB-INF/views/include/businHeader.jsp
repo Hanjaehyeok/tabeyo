@@ -17,7 +17,7 @@
 			style="margin-bottom: 0">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="index.html"><img
-					src="https://postfiles.pstatic.net/MjAyMDExMjdfOSAg/MDAxNjA2NDYzNTk0NDM0.VuyaYdiOf9UF09FEBhC5aRWK2sHqc76P258JvHZne_wg.7gCRK1Cko8njJXZlw6Lwo0u3LJMkY0v0XOiQflZUopUg.PNG.hanjahyuk123/%ED%83%80%EB%B2%A0%EC%9A%94%EB%A1%9C%EA%B3%A0.png?type=w580" style="height: 60px;"></a>
+					src="" style="height: 60px;"></a>
 			</div>
 			<!-- /.navbar-header -->
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -61,8 +61,11 @@
 				</ul>
 			</div>
           </nav>
+          </div>
+          </div>
+          
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     	<script>
-  =
+  
     	</script>
  
