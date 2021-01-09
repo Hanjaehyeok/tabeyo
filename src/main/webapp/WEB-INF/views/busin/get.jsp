@@ -190,6 +190,7 @@ geocoder.addressSearch(Addr , function(result, status) {
 							actionForm.submit();
 						});
 						
+					
 					 </script>
 <%@ include file="../include/footer.jsp" %>
           

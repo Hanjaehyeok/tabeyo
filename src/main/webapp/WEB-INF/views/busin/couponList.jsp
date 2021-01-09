@@ -159,7 +159,6 @@ geocoder.addressSearch(Addr , function(result, status) {
 </div>
 </div>	<!--end 등록모달  --> 
 
-			
 <script>
 	var modal = $('#modal');
 	var modal = $('.modal');
@@ -178,7 +177,7 @@ geocoder.addressSearch(Addr , function(result, status) {
   	});
   	
   	$("#regi_close_btn").click(function() {
-  		alert("등록을 취소합니다.")
+  		alert("창을 닫습니다.")
   	    modal.hide(); // 모달창 감추기
   	});
   	
@@ -188,22 +187,22 @@ var couponUl = $(".chat");
 showList();   //
 
 
-function showList(){   //댓글 목록 출력 함수 - <li>출력
+function showList(){   //쿠폰 목록 출력 함수 - <li>출력
 
-  couponService.getList(   //replyService의 getList 함수 호출
+  couponService.getList(   //couponService의 getList 함수 호출
       { businNo:businValue },
 //       function(list){
       function(list){
       
  
       
-         //댓글 목록이 없는 경우
+         //쿠폰 목록이 없는 경우
          if(list == null || list.length == 0){
         	 couponUl.html("등록된 쿠폰 없음");
             return;
          }
          
-         //댓글 목록이 있는 경우
+         //쿠폰 목록이 있는 경우
          var str = "";
          for(var i=0 ; i<list.length ; i++){   //<li> 구성
             str += 
@@ -218,7 +217,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
       } 
   );//END getList
  
-  //댓글 등록 버튼 이벤트 처리
+  //쿠폰 등록 버튼 이벤트 처리
   $("#registerBtn").click(function() {
 		
 	
@@ -228,7 +227,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
         couponCt   : inputcouponCt.val()
      }
      
-     //replyService의 add 함수 호출
+     //couponService의 add 함수 호출
     couponService.add(
             coupon,
             function(result){
@@ -240,7 +239,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
      );//END add()
      
 	 modal.hide(); // 모달창 감추기
-  });//END 댓글 등록 버튼 이벤트 처리
+  });//END 쿠폰 등록 버튼 이벤트 처리
  
   $('.chat').on('click', 'div', function(){
 	    
@@ -248,11 +247,11 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
 			
 			console.log(couponNo); 
 			
-			  //replyService의 get 함수 호출
+			  //couponService의 get 함수 호출
 		       couponService.get(couponNo, function(data){
 					console.log("겟되니?");	    	   
-		    	   inputcouponNm.val(data.couponNm);      //댓글 표시
-		    	   inputcouponCt.val(data.couponCt);   //작성자 표시
+		    	   inputcouponNm.val(data.couponNm);      //쿠폰 표시
+		    	   inputcouponCt.val(data.couponCt);   //쿠폰 내용 표시
 		    	   modal.data("mno",data.couponNo);
 					
 		    	
@@ -262,7 +261,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
 				  removeBtn.show();
 				  registerBtn.hide();
 		       });//END get
-		    });//END 댓글 클릭 이벤트 처리
+		    });//END 쿠폰 클릭 이벤트 처리
 		    
  		 removeBtn.on("click", function(e){
 		
@@ -288,7 +287,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
 				modal.hide();
 				location.reload(true);
 			});
-		});	//end 댓글 수정 이벤트 
+		});	//end 쿠폰 수정 이벤트 
  			
 }
  

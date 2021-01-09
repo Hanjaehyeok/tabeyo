@@ -2,15 +2,15 @@ console.log("COUPON MODULE....");
 
 var couponService = (function(){
 	
-	//댓글 목록 가져오기 
+	//쿠폰 목록 가져오기 
 	function getList(param , callback , error) {
 		var businNo = param.businNo; 
 		console.log("유진씨 안녕하세요");
 		$.getJSON("/coupon/list/" +businNo + ".json",
 				function(data) {
 					if(callback){
-						callback(data); //댓글 목록만 가져오는 경우 
-						//callback(data.replyCnt,data.list); //댓글 숫자와 목록을 가져오는 경우 
+						callback(data); //쿠폰 목록만 가져오는 경우 
+						//callback(data.replyCnt,data.list); //쿠폰 숫자와 목록을 가져오는 경우 
 					}
 				}
 		).fail(function(xhr,status,er) {

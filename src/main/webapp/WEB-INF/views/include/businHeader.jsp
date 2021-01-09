@@ -49,13 +49,13 @@
 			<div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav" style="text-align: center;">
 					<li class="nav-item" style="width: 300px; font-size: 40px;"><a
-						class="nav-link" href="#">점포정보</a></li>
+						class="nav-link" id="businInfo" href="${busin.businNo }">점포정보</a></li>
 					<li class="nav-item" style="width: 300px; font-size: 40px;"><a
-						class="nav-link" href="#">쿠폰목록</a></li>
+						class="nav-link" id="couponList" href="${busin.businNo }">쿠폰목록</a></li>
 					<li class="nav-item" style="width: 300px; font-size: 40px;"><a
-						class="nav-link" href="#">점포리뷰 목록</a></li>
+						class="nav-link" id="reviewList" href="${busin.businNo }">점포리뷰 목록</a></li>
 					<li class="nav-item" style="width: 300px; font-size: 40px;"><a
-                            class="nav-link" href="#">우리가게메뉴</a></li>
+                            class="nav-link" id="menuList" href="${busin.businNo }">우리가게메뉴</a></li>
                             
 					
 				</ul>
@@ -65,7 +65,46 @@
           </div>
           
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    	<script>
-  
-    	</script>
+    	<form id="actionForm" method="get">
+			 </form>
+			  <script> 
+					 var actionForm = $("#actionForm");
+						$('#couponList').on('click', function(e){
+							e.preventDefault();
+							
+							actionForm.append("<input type='hidden' name='businNo' value='" + 
+											    $(this).attr('href') + "'>")
+							
+							actionForm.attr('action', '/busin/couponList');				    
+							actionForm.submit();	
+						});
+						$('#menuList').on('click', function(e){
+							e.preventDefault();
+							
+							actionForm.append("<input type='hidden' name='businNo' value='" + 
+											    $(this).attr('href') + "'>")
+							
+							actionForm.attr('action', '/busin/menuList');				    
+							actionForm.submit();	
+						});
+						$('#reviewList').on('click', function(e){
+							e.preventDefault();
+							
+							actionForm.append("<input type='hidden' name='businNo' value='" + 
+											    $(this).attr('href') + "'>")
+							
+							actionForm.attr('action', '/busin/reviewList');				    
+							actionForm.submit();	
+						});
+						$('#businInfo').on('click', function(e){
+							e.preventDefault();
+							
+							actionForm.append("<input type='hidden' name='businNo' value='" + 
+											    $(this).attr('href') + "'>")
+							
+							actionForm.attr('action', '/busin/get');				    
+							actionForm.submit();	
+						});
+						
+					 </script>
  

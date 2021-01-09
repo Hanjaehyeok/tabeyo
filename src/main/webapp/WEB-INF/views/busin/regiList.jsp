@@ -80,6 +80,8 @@
         </style>
 	<script>
 	var actionForm = $("#actionForm");
+	
+	
 	$('.move').on('click', function(e){
 		e.preventDefault();
 		

@@ -169,7 +169,9 @@ geocoder.addressSearch(Addr , function(result, status) {
 
 			
 </div>
-<script>
+
+			 
+<script> //
 	var modal = $('#modal');
 	var modal = $('.modal');
 	var registerBtn = $('#registerBtn');    //등록 버튼
@@ -187,7 +189,7 @@ geocoder.addressSearch(Addr , function(result, status) {
   	});
   	
   	$("#regi_close_btn").click(function() {
-  		alert("등록을 취소합니다.")
+  		alert("창을 닫습니다.")
   	    modal.hide(); // 모달창 감추기
   	});
   	
@@ -197,22 +199,22 @@ var menuUl = $(".chat");
 showList();   //
 
 
-function showList(){   //댓글 목록 출력 함수 - <li>출력
+function showList(){   //메뉴 목록 출력 함수 - <li>출력
 
-  menuService.getList(   //replyService의 getList 함수 호출
+  menuService.getList(   //menuService의 getList 함수 호출
       { businNo:businValue },
 //       function(list){
       function(list){
       
  
       
-         //댓글 목록이 없는 경우
+         //메뉴 목록이 없는 경우
          if(list == null || list.length == 0){
         	 menuUl.html("등록된 메뉴 없음");
             return;
          }
          
-         //댓글 목록이 있는 경우
+         //메뉴 목록이 있는 경우
          var str = "";
          for(var i=0 ; i<list.length ; i++){   //<li> 구성
             str += 
@@ -228,7 +230,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
       } 
   );//END getList
  
-  //댓글 등록 버튼 이벤트 처리
+  //메뉴 등록 버튼 이벤트 처리
   $("#registerBtn").click(function() {
 		
 	
@@ -238,7 +240,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
         menuPrice   : inputMenuPrice.val()
      }
      
-     //replyService의 add 함수 호출
+     //menuSerivce의 add 함수 호출
     menuService.add(
             menu,
             function(result){
@@ -250,7 +252,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
      );//END add()
      
 	 modal.hide(); // 모달창 감추기
-  });//END 댓글 등록 버튼 이벤트 처리
+  });//END 메뉴 등록 버튼 이벤트 처리
  
   $('.chat').on('click', 'div', function(){
 	    
@@ -258,11 +260,11 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
 			
 			console.log(menuNo); 
 			
-			  //replyService의 get 함수 호출
+			  //menuService의 get 함수 호출
 		       menuService.get(menuNo, function(data){
-					console.log("겟되니?");	    	   
-		    	   inputMenuNm.val(data.menuNm);      //댓글 표시
-		    	   inputMenuPrice.val(data.menuPrice);   //작성자 표시
+					console.log("get");	    	   
+		    	   inputMenuNm.val(data.menuNm);     
+		    	   inputMenuPrice.val(data.menuPrice);   
 		    	   modal.data("mno",data.menuNo);
 					
 		    	
@@ -272,7 +274,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
 				  removeBtn.show();
 				  registerBtn.hide();
 		       });//END get
-		    });//END 댓글 클릭 이벤트 처리
+		    });//END 메뉴 클릭 이벤트 처리
 		    
  		 removeBtn.on("click", function(e){
 		
@@ -298,7 +300,7 @@ function showList(){   //댓글 목록 출력 함수 - <li>출력
 				modal.hide();
 				location.reload(true);
 			});
-		});	//end 댓글 수정 이벤트 
+		});	//end 메뉴 수정 이벤트 
  			
 }
  
