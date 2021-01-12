@@ -137,7 +137,27 @@ geocoder.addressSearch(Addr , function(result, status) {
 					  </tr>
 					  <tr class="table-active">
 						<th scope="row">점포등급</th>
-						<td>★★★★★</td>
+						<td>
+						  <c:set var="star" value="${busin.reviewAdd / busin.reviewCnt }"/>
+           <c:choose>
+           	<c:when test="${5 <= star }">
+           	${ star}  ★★★★★
+           	</c:when>
+           	<c:when test="${4 <= star }">
+           	${ star}  ★★★★☆
+           	3
+           	</c:when>
+           	<c:when test="${3 <= star }">
+           	${ star}  ★★★☆☆
+           	</c:when>
+           	<c:when test="${2 <= star }">
+           	${ star}  ★★☆☆☆
+           	</c:when>
+           	<c:otherwise>
+           	${ star}  ★☆☆☆☆
+           	</c:otherwise>
+           </c:choose>
+						</td>
 					  </tr>
 					  <tr class="table-active">
 						<th scope="row">요리종목</th>

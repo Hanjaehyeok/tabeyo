@@ -7,6 +7,7 @@
             <h1 class="display-3">검색 결과 - 10개 까지 표시됩니다.</h1>
         </div>
         <div class="businInfo">
+       
         <c:forEach items="${list }" var="busin">
           <table class="table table-hover">
             <tr>
@@ -18,8 +19,28 @@
            </tr>
            <tr>
            <td>별점</td>
-           <td>${busin.reviewAdd }/${busin.reviewCnt }</td>
+           <td>
+           <c:set var="star" value="${busin.reviewAdd / busin.reviewCnt }"/>
+           <c:choose>
+           	<c:when test="${5 <= star }">
+           	${ star} / ★★★★★
+           	</c:when>
+           	<c:when test="${4 <= star }">
+           	${ star} / ★★★★☆
+           	</c:when>
+           	<c:when test="${3 <= star }">
+           	${ star} / ★★★☆☆
+           	</c:when>
+           	<c:when test="${2 <= star }">
+           	${ star} / ★★☆☆☆
+           	</c:when>
+           	<c:otherwise>
+           	${ star} / ★☆☆☆☆
+           	</c:otherwise>
+           </c:choose>
+           </td>
           </tr>
+          
           <tr>
             <td>종목</td>
             <td>${busin.businFood}</td>
