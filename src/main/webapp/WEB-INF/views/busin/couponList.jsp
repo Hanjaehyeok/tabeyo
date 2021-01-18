@@ -7,7 +7,11 @@
       
 
 
-<style>
+<style>	
+		.body{
+			margin: auto;
+			width: 90%;
+		}
     	.chat{
           	padding-left: 0px;
           	}
@@ -50,10 +54,8 @@
 
 
 	.coupon{
-		
-		
 		display: flex;
-	}
+		}
 	
 </style>
 	<script src="/resources/js/coupon.js"></script>

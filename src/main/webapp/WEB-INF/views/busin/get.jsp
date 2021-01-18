@@ -13,6 +13,10 @@
 			</div>
 			
 		  <style>
+		  	.body {
+		  		width: 90%;
+		  		margin: auto;
+		  	}
 			  #star{
 				text-align: center;
 			  }

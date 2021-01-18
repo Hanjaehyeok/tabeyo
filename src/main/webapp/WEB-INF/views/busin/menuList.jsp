@@ -8,6 +8,11 @@
 
 
 <style>
+
+		.body{
+			width: 90%;
+			margin: auto;
+		}
     	.chat{
           	padding-left: 0px;
           	}
@@ -126,7 +131,9 @@ geocoder.addressSearch(Addr , function(result, status) {
 			
 			
 			
+			
 			<div class="modal" id="regi-modal">				<!-- 등록모달  -->
+				
   			<div class="modal-dialog" role="document">
    		    <div class="modal-content">
       <div class="modal-header">
@@ -135,14 +142,18 @@ geocoder.addressSearch(Addr , function(result, status) {
       <div class="modal-body">
         <div class="form-group">
          <div class="form-group">
+         			
 						<label class="col-form-label" for="inputDefault">메뉴사진</label>
 						<div class="input-group mb-3">
+						<form action="uploadFormAction" method="post" enctype="multipart/form-data">
 						  <div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile02">
+							<input type="file" class="custom-file-input" id="inputGroupFile02" name="uploadFile" multiple>
 							<label class="custom-file-label" for="inputGroupFile02">메뉴사진</label>
 						  </div>
-						
+						  <button>submit</button>
+						  </form>
 						</div>
+		
           <label class="col-form-label">메뉴 이름</label>
 			<input type="text" class="form-control" id="inputDefault"
 			name="menuNm" placeholder="메뉴이름" value="메뉴!">
@@ -165,6 +176,7 @@ geocoder.addressSearch(Addr , function(result, status) {
     </div>
   </div>
 </div>
+	
 </div>	<!--end 등록모달  --> 
 
 			
