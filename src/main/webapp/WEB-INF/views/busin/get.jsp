@@ -54,7 +54,7 @@
 		  <div class="body">
 			<div class="body-top">
 				<div class="syasin">
-				<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA1MTJfMjg1%2FMDAxNTg5Mjg3MTY3NDMy.FqJOq_x03tYxL_AhyDoD7AsUL6HPS6GVfSgWQmJJV3cg.P7vCqHwISJjnuVAko628VJ3_IpZdpgeYLd0oO74r1hsg.JPEG.uhg99144%2FDSC01434.JPG&type=sc960_832
+				<img src="/resources/img/no-image.png
 				" >
 				</div>
 				<div class="body-top-asioe">

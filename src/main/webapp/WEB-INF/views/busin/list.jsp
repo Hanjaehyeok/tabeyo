@@ -11,7 +11,7 @@
         <c:forEach items="${list }" var="busin">
           <table class="table table-hover">
             <tr>
-              <td scope="col" colspan="2" ><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA1MTJfMjg1%2FMDAxNTg5Mjg3MTY3NDMy.FqJOq_x03tYxL_AhyDoD7AsUL6HPS6GVfSgWQmJJV3cg.P7vCqHwISJjnuVAko628VJ3_IpZdpgeYLd0oO74r1hsg.JPEG.uhg99144%2FDSC01434.JPG&type=sc960_832"></td>
+              <td scope="col" colspan="2" ><img src="/resources/img/no-image.png"></td>
             </tr>
             <tr>
           <td>점포명</td>

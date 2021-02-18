@@ -7,7 +7,7 @@
     <hr class="my-4">
 
     <p>Credits</p>
-    <p>한재혁 김경모 송유진 임현우</p>
+    <p>한재혁</p>
    
   </div>
 <!-- End Footer-->

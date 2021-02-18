@@ -27,7 +27,10 @@ import lombok.extern.log4j.Log4j;
 public class BusinController{
 	private BusinService businService;
 	
-	
+	@GetMapping("/main")
+	public void main(){
+		
+	}
 	@GetMapping("/modify")		//
 	public void modify(@RequestParam("businNo") Long businNo, 
 				    Model model) {

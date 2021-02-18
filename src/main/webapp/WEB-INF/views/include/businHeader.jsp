@@ -3,6 +3,9 @@
 <%--  <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
  --%><!DOCTYPE html>
 <html>
+<style>
+
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +19,8 @@
 		<nav class="navbar navbar-default navbar-static-top" role="navigation"
 			style="margin-bottom: 0">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html"><img
-					src="" style="height: 60px;"></a>
+				<a class="navbar-brand" href="/busin/main"><img
+					src="/resources/img/tabeyolog.PNG" style="height: 100px; width:200px;" ></a>
 			</div>
 			<!-- /.navbar-header -->
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
