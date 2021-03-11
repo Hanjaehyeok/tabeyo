@@ -26,5 +26,7 @@ public class BusinVO {
 	private Date regdate; 
 	private Long reviewCnt; 
 	private Long reviewAdd; 
+	private String photo;
+	private String regPhoto;
 
 }
