@@ -12,5 +12,4 @@
   </div>
 <!-- End Footer-->
 
-</body>
 </html>
