@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +23,7 @@
 </head>
 <div class="navbar-header">
 
-	<a class="navbar-brand" href="/busin/main"><img
+	<a class="navbar-brand" href="/main/main"><img
 		src="/resources/img/tabeyologo.png"
 		style="height: 100px; width: 200px;"></a>
 	<div class="login">
@@ -29,13 +31,13 @@
 			id="inputDefault" style="width: 283px;"> <input
 			type="password" class="form-control" id="exampleInputPassword1"
 			placeholder="Password" style="width: 283px;">
-		<button type="button" class="btn btn-primary">로그인</button>
-		<button type="button" class="btn btn-primary">ID/PW 찾기</button>
-		<button type="button" class="btn btn-primary">회원가입</button>
+		<button type="button" class="btn btn-primary" >로그인</button>
+		<button type="button" class="btn btn-primary" id="userFind">ID/PW 찾기</button>
+		<button type="button" class="btn btn-primary" id="userRegi">회원가입</button>
 	</div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/busin/main">메인</a>
+  <a class="navbar-brand" href="/main/main">메인</a>
  
 
   <div class="navbar-collapse collapse show" id="navbarColor01" style="">
@@ -57,4 +59,26 @@
     </ul>
     
   </div>
+    <form action="" id="actionForm" method="get">
+    </form>
 </nav>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var actionForm = $("#actionForm");
+
+
+$('#userRegi').on('click', function(e){
+	console.log("1");	
+	
+	actionForm.attr('action', '/user/userRegi');				    
+	actionForm.submit();	
+});
+
+$('#userFind').on('click', function(e){
+	console.log("1");	
+	
+	actionForm.attr('action', '/user/userFind');				    
+	actionForm.submit();	
+});
+</script>

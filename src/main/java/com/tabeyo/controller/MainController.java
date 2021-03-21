@@ -8,20 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 
 @Controller
-@RequestMapping("/user/*")
+@RequestMapping("/main/*")
 @AllArgsConstructor
 @Log4j
-public class UserController {
-	@GetMapping("/userRegi")
-	public void userRegi(){
+public class MainController {
+	
+	@GetMapping("/main")
+	public void main(){
 		log.info("UserController - userRegi");
 	}
-	@GetMapping("/userFind")
-	public void userFind(){
-		log.info("UserController - userFind");
-	}
-	@GetMapping("/userGet")
-	public void userGet(){
-		log.info("UserController - userGet");
-	}
 }
+
