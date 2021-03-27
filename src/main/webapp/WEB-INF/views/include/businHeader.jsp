@@ -23,7 +23,7 @@
 <body>
   		<div class="navbar-header">
 				
-				<a class="navbar-brand" href="/busin/main"><img
+				<a class="navbar-brand" href="/main/main"><img
 					src="/resources/img/tabeyologo.png" style="height: 100px; width:200px;" ></a>
 					<div class="login">
   					<input type="text" class="form-control" placeholder="ID" id="inputDefault" style="width:283px;" > 
